@@ -7,8 +7,8 @@ export const getRouter = () => {
   const queryClient = new QueryClient();
 
   // Use memory history on server (SSR) and hash history in the browser
-  const isServer = typeof window === 'undefined'
-  const history = isServer ? createMemoryHistory({ initialEntries: ['/'] }) : createHashHistory()
+  const isBrowser = typeof window !== 'undefined' && typeof window.history !== 'undefined' && typeof document !== 'undefined'
+  const history = isBrowser ? createHashHistory() : createMemoryHistory({ initialEntries: ['/'] })
 
   const router = createRouter({
     routeTree,
