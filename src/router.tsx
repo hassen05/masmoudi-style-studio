@@ -1,16 +1,17 @@
 import { QueryClient } from "@tanstack/react-query";
-import { createRouter, createHashHistory } from "@tanstack/react-router";
+import { createRouter, createHashHistory, createMemoryHistory } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 
 export const getRouter = () => {
   const queryClient = new QueryClient();
 
-  // On crée un historique basé sur le "Hash" (#) adapté à l'hébergement statique GitHub Pages
-  const hashHistory = createHashHistory();
+  // Use memory history on server (SSR) and hash history in the browser
+  const isServer = typeof window === 'undefined'
+  const history = isServer ? createMemoryHistory({ initialEntries: ['/'] }) : createHashHistory()
 
   const router = createRouter({
     routeTree,
-    history: hashHistory, // <--- Injection cruciale ici
+    history, // <--- Injection cruciale ici
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
