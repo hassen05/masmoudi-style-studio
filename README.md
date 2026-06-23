@@ -77,3 +77,24 @@ bun run preview
 ---
 
 If you want, I can also add a short CONTRIBUTING or developer notes file with common dev tasks.
+
+## Deploy to GitHub Pages (frontend only)
+
+This repository includes a GitHub Actions workflow that builds the frontend and publishes the `dist` folder to GitHub Pages (branch `gh-pages`). The API/server (`src/server.ts`) is not deployed — GitHub Pages is static-only.
+
+How it works:
+- The Action builds with `vite build -- --base=/REPO_NAME/` (project pages) and copies `dist/index.html` to `dist/404.html` for SPA fallback.
+- The site is published using `peaceiris/actions-gh-pages`.
+
+To use:
+1. Push your code to the `main` branch.
+2. The workflow will run automatically and publish to the `gh-pages` branch.
+
+Manual build & deploy (optional):
+
+```bash
+npm run build -- --base=/REPO_NAME/
+npm run postbuild
+# then push `dist` to gh-pages branch using your preferred method
+```
+
