@@ -1,4 +1,4 @@
-# Masmoudi Style Studio
+# Marco Benucci Style Studio
 
 This is a TanStack Start + Vite React starter configured with @lovable.dev/vite-tanstack-config.
 

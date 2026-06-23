@@ -379,7 +379,7 @@ function Story() {
           </motion.h2>
           <div className="mt-8 space-y-5 text-foreground/70 leading-relaxed max-w-lg">
             <p>
-              Fondée par Hédi Masmoudi dans la médina, notre maison cultive le même geste depuis
+              Fondée par Lasaad Masmoudi dans la médina, notre maison cultive le même geste depuis
               trois générations : tracer la craie, monter l'épaule à la main, ajuster l'aplomb
               d'une veste sur l'homme qui la portera.
             </p>

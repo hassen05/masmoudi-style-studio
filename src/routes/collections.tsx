@@ -13,7 +13,7 @@ type Clothing = {
 
 export const Route = createFileRoute('/collections')({
   head: () => ({
-    meta: [{ title: 'Collections — Masmoudi' }],
+    meta: [{ title: 'Collections — Marco Benucci' }],
   }),
   component: CollectionsPage,
 })
