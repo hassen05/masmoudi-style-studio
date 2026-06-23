@@ -478,7 +478,7 @@ function Footer() {
         </div>
       </div>
       <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between gap-4 eyebrow text-foreground/50">
-        <span>© 2025 Maison Masmoudi</span>
+        <span>© 2025 Maison Marco Benucci</span>
         <span>Tunis · Paris · Milano</span>
       </div>
     </footer>

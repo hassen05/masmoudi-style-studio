@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // ADD THIS BLOCK BELOW
+  vite: {
+    base: '/masmoudi-style-studio/',
+  }
 });
