@@ -42,34 +42,35 @@
 }
 
 :root {
-  --radius: 0.25rem;
+  --radius: 0.125rem;
 
-  /* Warm editorial palette */
-  --cream: oklch(0.972 0.012 80);
-  --sand: oklch(0.91 0.022 75);
-  --noir: oklch(0.18 0.012 60);
-  --blush: oklch(0.82 0.06 25);
-  --gold: oklch(0.72 0.10 70);
+  /* Masculine editorial palette — deep noir, smoke, tobacco, brass */
+  --cream: oklch(0.94 0.008 80);
+  --sand: oklch(0.78 0.020 70);
+  --noir: oklch(0.14 0.008 60);
+  --smoke: oklch(0.22 0.006 60);
+  --blush: oklch(0.62 0.10 55); /* tobacco/brass accent */
+  --gold: oklch(0.72 0.12 80);
 
-  --background: var(--cream);
-  --foreground: var(--noir);
-  --card: oklch(1 0 0);
-  --card-foreground: var(--noir);
-  --popover: oklch(1 0 0);
-  --popover-foreground: var(--noir);
-  --primary: var(--noir);
-  --primary-foreground: var(--cream);
-  --secondary: var(--sand);
-  --secondary-foreground: var(--noir);
-  --muted: oklch(0.94 0.012 75);
-  --muted-foreground: oklch(0.42 0.012 60);
+  --background: oklch(0.12 0.006 60);
+  --foreground: var(--cream);
+  --card: var(--smoke);
+  --card-foreground: var(--cream);
+  --popover: var(--smoke);
+  --popover-foreground: var(--cream);
+  --primary: var(--cream);
+  --primary-foreground: var(--noir);
+  --secondary: var(--smoke);
+  --secondary-foreground: var(--cream);
+  --muted: oklch(0.20 0.006 60);
+  --muted-foreground: oklch(0.65 0.010 70);
   --accent: var(--blush);
-  --accent-foreground: var(--noir);
+  --accent-foreground: var(--cream);
   --destructive: oklch(0.55 0.20 27);
   --destructive-foreground: var(--cream);
-  --border: oklch(0.86 0.018 70);
-  --input: oklch(0.86 0.018 70);
-  --ring: var(--noir);
+  --border: oklch(0.26 0.006 60);
+  --input: oklch(0.26 0.006 60);
+  --ring: var(--cream);
 }
 
 @layer base {
