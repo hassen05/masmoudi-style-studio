@@ -32,12 +32,12 @@ jobs:
           echo "Building with base=/$REPO/"
           npm run build -- --base=/$REPO/
 
-      - name: SPA fallback
+      - name: SPA fallback (client)
         run: |
-          cp dist/index.html dist/404.html || true
+          cp dist/client/index.html dist/client/404.html || true
 
-      - name: Deploy to gh-pages
+      - name: Deploy to gh-pages (publish client)
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./dist/client
