@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import hero from "@/assets/hero.jpg";
-import lingerie from "@/assets/collection-lingerie.jpg";
-import nightwear from "@/assets/collection-nightwear.jpg";
-import loungewear from "@/assets/collection-loungewear.jpg";
+import tailoring from "@/assets/collection-lingerie.jpg";
+import denim from "@/assets/collection-nightwear.jpg";
+import knitwear from "@/assets/collection-loungewear.jpg";
 import look1 from "@/assets/lookbook-1.jpg";
 import look2 from "@/assets/lookbook-2.jpg";
 import story from "@/assets/story.jpg";
@@ -12,16 +12,16 @@ import story from "@/assets/story.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Masmoudi — Maison de Lingerie & Nuit" },
+      { title: "Masmoudi — Maison de Tailleur" },
       {
         name: "description",
         content:
-          "Masmoudi crafts refined lingerie, nightwear and loungewear. A Tunisian maison rooted in savoir-faire, silk and lace.",
+          "Masmoudi — maison tunisienne de prêt-à-porter masculin. Tailleur, denim et maille taillés à la main depuis 1978.",
       },
-      { property: "og:title", content: "Masmoudi — Maison de Lingerie & Nuit" },
+      { property: "og:title", content: "Masmoudi — Maison de Tailleur" },
       {
         property: "og:description",
-        content: "Refined lingerie, nightwear and loungewear from a Tunisian maison.",
+        content: "Prêt-à-porter masculin. Tailleur, denim, maille. Tunis, depuis 1978.",
       },
       { property: "og:image", content: hero },
       { name: "twitter:card", content: "summary_large_image" },
@@ -41,21 +41,21 @@ const fadeUp = {
 function Nav() {
   return (
     <header className="fixed top-0 inset-x-0 z-50">
-      <div className="mx-auto flex items-center justify-between px-6 md:px-12 py-5 backdrop-blur-md bg-background/60 border-b border-border/60">
+      <div className="mx-auto flex items-center justify-between px-6 md:px-12 py-5 backdrop-blur-md bg-background/70 border-b border-border/60">
         <a href="#" className="font-display text-2xl tracking-wide leading-none">
           masmoudi
           <span className="text-accent">.</span>
         </a>
-        <nav className="hidden md:flex items-center gap-10 eyebrow text-foreground/80">
+        <nav className="hidden md:flex items-center gap-10 eyebrow text-foreground/70">
           <a href="#collections" className="hover:text-foreground transition">Collections</a>
           <a href="#lookbook" className="hover:text-foreground transition">Lookbook</a>
-          <a href="#story" className="hover:text-foreground transition">Maison</a>
+          <a href="#story" className="hover:text-foreground transition">Atelier</a>
           <a href="#contact" className="hover:text-foreground transition">Contact</a>
         </nav>
         <div className="flex items-center gap-6 eyebrow">
-          <button className="hidden sm:inline text-foreground/80 hover:text-foreground transition">Search</button>
-          <button className="text-foreground/80 hover:text-foreground transition">
-            Bag<span className="ml-1 text-accent">(0)</span>
+          <button className="hidden sm:inline text-foreground/70 hover:text-foreground transition">Rechercher</button>
+          <button className="text-foreground/70 hover:text-foreground transition">
+            Panier<span className="ml-1 text-accent">(0)</span>
           </button>
         </div>
       </div>
@@ -74,12 +74,13 @@ function Hero() {
       <motion.div style={{ y }} className="absolute inset-0">
         <img
           src={hero}
-          alt="Masmoudi silk slip"
+          alt="Masmoudi — manteau en laine"
           className="h-full w-full object-cover kenburns"
           width={1280}
           height={1600}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/10 to-transparent" />
       </motion.div>
 
       <motion.div
@@ -90,7 +91,7 @@ function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease, delay: 0.4 }}
-          className="eyebrow text-foreground/80"
+          className="eyebrow text-foreground/70"
         >
           Collection Hiver — 2025
         </motion.p>
@@ -104,7 +105,7 @@ function Hero() {
           }}
           className="font-display text-[14vw] md:text-[9.5vw] leading-[0.95] tracking-tight mt-4 max-w-[14ch]"
         >
-          {["L'art", "du", "silence."].map((word, i) => (
+          {["Taillé", "pour", "durer."].map((word, i) => (
             <motion.span
               key={i}
               variants={{
@@ -124,9 +125,9 @@ function Hero() {
           transition={{ duration: 0.8, ease, delay: 1.2 }}
           className="mt-8 flex flex-col md:flex-row md:items-end justify-between gap-6"
         >
-          <p className="max-w-md text-foreground/75 leading-relaxed">
-            Une maison tunisienne dédiée à la lingerie, au vêtement de nuit et au confort de l'intime.
-            Soie, dentelle, coton — taillés à la main.
+          <p className="max-w-md text-foreground/70 leading-relaxed">
+            Une maison tunisienne dédiée au vestiaire masculin. Tailleur, denim brut, maille
+            lourde — coupés à la main, pensés pour traverser les saisons.
           </p>
           <div className="flex items-center gap-6">
             <a
@@ -138,13 +139,13 @@ function Hero() {
               <span className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
             </a>
             <a href="#story" className="eyebrow border-b border-foreground/30 pb-1 hover:border-foreground transition">
-              Notre histoire
+              L'atelier
             </a>
           </div>
         </motion.div>
       </motion.div>
 
-      <div className="absolute top-1/2 right-6 -translate-y-1/2 hidden lg:flex flex-col items-center gap-3 rotate-90 origin-center eyebrow text-foreground/60">
+      <div className="absolute top-1/2 right-6 -translate-y-1/2 hidden lg:flex flex-col items-center gap-3 rotate-90 origin-center eyebrow text-foreground/50">
         <span className="h-12 w-px bg-foreground/30" />
         <span>Scroll</span>
       </div>
@@ -153,7 +154,18 @@ function Hero() {
 }
 
 function Marquee() {
-  const words = ["Soie", "·", "Dentelle de Calais", "·", "Coton d'Égypte", "·", "Savoir-faire 1978", "·", "Tunis — Paris", "·"];
+  const words = [
+    "Laine de Biella",
+    "·",
+    "Selvedge du Japon",
+    "·",
+    "Cuir tanné végétal",
+    "·",
+    "Savoir-faire 1978",
+    "·",
+    "Tunis — Milano",
+    "·",
+  ];
   return (
     <div className="py-8 md:py-12 border-y border-border overflow-hidden bg-secondary/40">
       <div className="marquee-track font-display italic text-4xl md:text-6xl text-foreground/70 whitespace-nowrap">
@@ -176,24 +188,24 @@ type Collection = {
 const collections: Collection[] = [
   {
     index: "01",
-    name: "Lingerie",
-    tagline: "Dentelle florale, bretelles satin",
-    pieces: "24 pièces",
-    image: lingerie,
+    name: "Tailleur",
+    tagline: "Costumes, vestes, manteaux en laine",
+    pieces: "26 pièces",
+    image: tailoring,
   },
   {
     index: "02",
-    name: "Nuit",
-    tagline: "Chemises et nuisettes en soie lavée",
-    pieces: "18 pièces",
-    image: nightwear,
+    name: "Denim",
+    tagline: "Selvedge brut, vestes en cuir",
+    pieces: "14 pièces",
+    image: denim,
   },
   {
     index: "03",
-    name: "Intérieur",
-    tagline: "Loungewear, kimonos, peignoirs",
-    pieces: "12 pièces",
-    image: loungewear,
+    name: "Maille",
+    tagline: "Cols roulés, cardigans, pulls torsadés",
+    pieces: "18 pièces",
+    image: knitwear,
   },
 ];
 
@@ -218,12 +230,12 @@ function Collections() {
             viewport={{ once: true, margin: "-100px" }}
             className="font-display text-5xl md:text-7xl leading-[1] mt-4 max-w-3xl"
           >
-            Trois univers, <em className="italic text-accent">une seule promesse.</em>
+            Trois vestiaires, <em className="italic text-accent">une même rigueur.</em>
           </motion.h2>
         </div>
         <p className="text-foreground/70 max-w-sm leading-relaxed">
-          Chaque pièce est pensée pour se porter près du corps comme une seconde peau —
-          discrète, durable, profondément féminine.
+          Chaque pièce est coupée pour tenir l'épaule, tomber juste, et vieillir avec celui
+          qui la porte. Rien de superflu.
         </p>
       </div>
 
@@ -248,7 +260,7 @@ function Collections() {
                 height={1100}
                 className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-105"
               />
-              <div className="absolute top-4 left-4 eyebrow text-cream mix-blend-difference">
+              <div className="absolute top-4 left-4 eyebrow text-foreground mix-blend-difference">
                 {c.index}
               </div>
               <div className="absolute bottom-4 right-4 px-3 py-1 bg-background/85 backdrop-blur-sm eyebrow">
@@ -273,14 +285,14 @@ function Collections() {
 
 function Lookbook() {
   return (
-    <section id="lookbook" className="px-6 md:px-12 py-24 md:py-36 bg-noir text-cream relative overflow-hidden">
+    <section id="lookbook" className="px-6 md:px-12 py-24 md:py-36 bg-secondary/40 border-y border-border relative overflow-hidden">
       <div className="grid grid-cols-12 gap-6 md:gap-10 items-end">
         <div className="col-span-12 md:col-span-5">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="eyebrow text-cream/60"
+            className="eyebrow text-muted-foreground"
           >
             — Lookbook 2025
           </motion.p>
@@ -291,17 +303,17 @@ function Lookbook() {
             viewport={{ once: true }}
             className="font-display text-5xl md:text-7xl leading-[1] mt-5"
           >
-            Détails, <em className="italic text-blush">matières, lumière.</em>
+            La matière, <em className="italic text-accent">le geste, l'ombre.</em>
           </motion.h2>
           <motion.p
             variants={fadeUp}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="mt-8 text-cream/75 max-w-md leading-relaxed"
+            className="mt-8 text-foreground/70 max-w-md leading-relaxed"
           >
-            Photographié à Sidi Bou Saïd, le lookbook hiver capture la rencontre entre
-            la lumière méditerranéenne et la délicatesse de nos pièces signature.
+            Photographié entre Tunis et Milan, le lookbook hiver met en avant les laines
+            lourdes, les cuirs patinés et le détail d'un poignet bien coupé.
           </motion.p>
           <motion.a
             href="#"
@@ -309,7 +321,7 @@ function Lookbook() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="inline-flex items-center gap-3 mt-10 eyebrow border-b border-cream/40 pb-1 hover:border-cream"
+            className="inline-flex items-center gap-3 mt-10 eyebrow border-b border-foreground/40 pb-1 hover:border-foreground"
           >
             Feuilleter le lookbook <span>→</span>
           </motion.a>
@@ -355,7 +367,7 @@ function Story() {
         </motion.div>
 
         <div className="col-span-12 md:col-span-6 md:pl-8">
-          <p className="eyebrow text-muted-foreground">— La maison</p>
+          <p className="eyebrow text-muted-foreground">— L'atelier</p>
           <motion.h2
             variants={fadeUp}
             initial="hidden"
@@ -363,24 +375,25 @@ function Story() {
             viewport={{ once: true }}
             className="font-display text-5xl md:text-6xl leading-[1.02] mt-5"
           >
-            Depuis 1978, l'intime <em className="italic text-accent">prend forme</em> à Tunis.
+            Depuis 1978, le tailleur <em className="italic text-accent">se transmet</em> à Tunis.
           </motion.h2>
-          <div className="mt-8 space-y-5 text-foreground/75 leading-relaxed max-w-lg">
+          <div className="mt-8 space-y-5 text-foreground/70 leading-relaxed max-w-lg">
             <p>
-              Fondée par Habiba Masmoudi dans la médina, notre maison cultive un même geste
-              depuis trois générations : assembler la dentelle à la main, ajuster chaque
-              bretelle, faire de chaque pièce un objet de soin.
+              Fondée par Hédi Masmoudi dans la médina, notre maison cultive le même geste depuis
+              trois générations : tracer la craie, monter l'épaule à la main, ajuster l'aplomb
+              d'une veste sur l'homme qui la portera.
             </p>
             <p>
-              Aujourd'hui, nos ateliers à La Marsa emploient quarante artisanes. Nous travaillons
-              uniquement avec des soieries de Côme, du coton d'Égypte et de la dentelle de Calais.
+              Aujourd'hui, nos ateliers de La Marsa réunissent trente-deux tailleurs. Nous ne
+              travaillons qu'avec des laines de Biella, du denim selvedge japonais et des cuirs
+              tannés végétal.
             </p>
           </div>
 
           <div className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-8">
             {[
               { k: "47", l: "Années" },
-              { k: "40", l: "Artisanes" },
+              { k: "32", l: "Tailleurs" },
               { k: "100%", l: "Fait main" },
             ].map((s) => (
               <div key={s.l}>
@@ -397,7 +410,7 @@ function Story() {
 
 function Newsletter() {
   return (
-    <section id="contact" className="px-6 md:px-12 py-24 md:py-32 bg-secondary/60 border-y border-border">
+    <section id="contact" className="px-6 md:px-12 py-24 md:py-32 bg-secondary/40 border-y border-border">
       <div className="max-w-3xl mx-auto text-center">
         <p className="eyebrow text-muted-foreground">— Le journal</p>
         <motion.h2
@@ -407,11 +420,10 @@ function Newsletter() {
           viewport={{ once: true }}
           className="font-display text-5xl md:text-7xl leading-[1] mt-5"
         >
-          Recevez nos <em className="italic text-accent">confidences.</em>
+          Le carnet de <em className="italic text-accent">l'atelier.</em>
         </motion.h2>
         <p className="mt-6 text-foreground/70 max-w-lg mx-auto">
-          Nouvelles collections, rendez-vous d'atelier et éditoriaux. Une lettre par mois,
-          jamais plus.
+          Nouvelles coupes, essayages privés, éditoriaux. Une lettre par mois, jamais plus.
         </p>
         <form
           onSubmit={(e) => e.preventDefault()}
@@ -438,34 +450,34 @@ function Newsletter() {
 
 function Footer() {
   return (
-    <footer className="px-6 md:px-12 py-16 bg-noir text-cream">
+    <footer className="px-6 md:px-12 py-16 bg-background border-t border-border">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
         <div className="col-span-2">
-          <div className="font-display text-3xl">masmoudi<span className="text-blush">.</span></div>
-          <p className="mt-5 text-cream/60 max-w-xs text-sm leading-relaxed">
-            Maison de lingerie, nuit et intérieur. Tunis, depuis 1978.
+          <div className="font-display text-3xl">masmoudi<span className="text-accent">.</span></div>
+          <p className="mt-5 text-foreground/60 max-w-xs text-sm leading-relaxed">
+            Maison de tailleur. Vestiaire masculin. Tunis, depuis 1978.
           </p>
         </div>
         <div>
-          <div className="eyebrow text-cream/50 mb-5">Boutique</div>
-          <ul className="space-y-3 text-cream/85 text-sm">
-            <li><a href="#" className="hover:text-blush transition">Lingerie</a></li>
-            <li><a href="#" className="hover:text-blush transition">Nuit</a></li>
-            <li><a href="#" className="hover:text-blush transition">Intérieur</a></li>
-            <li><a href="#" className="hover:text-blush transition">Cartes cadeaux</a></li>
+          <div className="eyebrow text-foreground/50 mb-5">Boutique</div>
+          <ul className="space-y-3 text-foreground/80 text-sm">
+            <li><a href="#" className="hover:text-accent transition">Tailleur</a></li>
+            <li><a href="#" className="hover:text-accent transition">Denim</a></li>
+            <li><a href="#" className="hover:text-accent transition">Maille</a></li>
+            <li><a href="#" className="hover:text-accent transition">Sur-mesure</a></li>
           </ul>
         </div>
         <div>
-          <div className="eyebrow text-cream/50 mb-5">Maison</div>
-          <ul className="space-y-3 text-cream/85 text-sm">
-            <li><a href="#" className="hover:text-blush transition">Notre histoire</a></li>
-            <li><a href="#" className="hover:text-blush transition">Ateliers</a></li>
-            <li><a href="#" className="hover:text-blush transition">Boutiques</a></li>
-            <li><a href="#" className="hover:text-blush transition">Contact</a></li>
+          <div className="eyebrow text-foreground/50 mb-5">Maison</div>
+          <ul className="space-y-3 text-foreground/80 text-sm">
+            <li><a href="#" className="hover:text-accent transition">Notre histoire</a></li>
+            <li><a href="#" className="hover:text-accent transition">Ateliers</a></li>
+            <li><a href="#" className="hover:text-accent transition">Boutiques</a></li>
+            <li><a href="#" className="hover:text-accent transition">Contact</a></li>
           </ul>
         </div>
       </div>
-      <div className="mt-16 pt-8 border-t border-cream/15 flex flex-col md:flex-row justify-between gap-4 eyebrow text-cream/50">
+      <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between gap-4 eyebrow text-foreground/50">
         <span>© 2025 Maison Masmoudi</span>
         <span>Tunis · Paris · Milano</span>
       </div>
