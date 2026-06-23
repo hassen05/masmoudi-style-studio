@@ -12,13 +12,13 @@ import story from "@/assets/story.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Masmoudi — Maison de Tailleur" },
+      { title: "Marco Benucci — Maison de Tailleur" },
       {
         name: "description",
         content:
-          "Masmoudi — maison tunisienne de prêt-à-porter masculin. Tailleur, denim et maille taillés à la main depuis 1978.",
+          "Marco Benucci — maison tunisienne de prêt-à-porter masculin. Tailleur, denim et maille taillés à la main depuis 1978.",
       },
-      { property: "og:title", content: "Masmoudi — Maison de Tailleur" },
+      { property: "og:title", content: "Marco Benucci — Maison de Tailleur" },
       {
         property: "og:description",
         content: "Prêt-à-porter masculin. Tailleur, denim, maille. Tunis, depuis 1978.",
@@ -43,7 +43,7 @@ function Nav() {
     <header className="fixed top-0 inset-x-0 z-50">
       <div className="mx-auto flex items-center justify-between px-6 md:px-12 py-5 backdrop-blur-md bg-background/70 border-b border-border/60">
         <a href="#" className="font-display text-2xl tracking-wide leading-none">
-          masmoudi
+          Marco Benucci
           <span className="text-accent">.</span>
         </a>
         <nav className="hidden md:flex items-center gap-10 eyebrow text-foreground/70">
@@ -74,7 +74,7 @@ function Hero() {
       <motion.div style={{ y }} className="absolute inset-0">
         <img
           src={hero}
-          alt="Masmoudi — manteau en laine"
+          alt="Marco Benucci — manteau en laine"
           className="h-full w-full object-cover kenburns"
           width={1280}
           height={1600}
@@ -363,7 +363,7 @@ function Story() {
           transition={{ duration: 1.2, ease }}
           className="col-span-12 md:col-span-6 aspect-[4/5] overflow-hidden"
         >
-          <img src={story} alt="Atelier Masmoudi" loading="lazy" width={1200} height={1400} className="h-full w-full object-cover" />
+          <img src={story} alt="Atelier Marco Benucci" loading="lazy" width={1200} height={1400} className="h-full w-full object-cover" />
         </motion.div>
 
         <div className="col-span-12 md:col-span-6 md:pl-8">
@@ -453,7 +453,7 @@ function Footer() {
     <footer className="px-6 md:px-12 py-16 bg-background border-t border-border">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-12">
         <div className="col-span-2">
-          <div className="font-display text-3xl">masmoudi<span className="text-accent">.</span></div>
+          <div className="font-display text-3xl">Marco Benucci<span className="text-accent">.</span></div>
           <p className="mt-5 text-foreground/60 max-w-xs text-sm leading-relaxed">
             Maison de tailleur. Vestiaire masculin. Tunis, depuis 1978.
           </p>
