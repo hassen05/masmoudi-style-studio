@@ -9,6 +9,7 @@
     "postbuild": "node ./scripts/postbuild.js",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
+    "start": "node ./dist/server/server.js",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
