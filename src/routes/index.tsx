@@ -243,7 +243,7 @@ function Collections() {
         {collections.map((c, i) => (
           <motion.a
             key={c.index}
-            href="#"
+            href="/collections"
             variants={fadeUp}
             initial="hidden"
             whileInView="show"

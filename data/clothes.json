@@ -1,0 +1,26 @@
+[
+  {
+    "id": "mas-001",
+    "name": "Manteau en laine — Navy",
+    "description": "Manteau long en laine vierge, coupe tailleur.",
+    "price": "€80",
+    "image": "src/assets/hero.jpg",
+    "collection": "Tailleur"
+  },
+  {
+    "id": "mas-002",
+    "name": "Pull torsadé — Écru",
+    "description": "Maille lourde, col roulé.",
+    "price": "€160",
+    "image": "src/assets/lookbook-1.jpg",
+    "collection": "Maille"
+  },
+  {
+    "id": "mas-003",
+    "name": "Veste denim — Brut",
+    "description": "Veste en selvedge denim, intérieur surpiqué.",
+    "price": "€220",
+    "image": "src/assets/lookbook-2.jpg",
+    "collection": "Denim"
+  }
+]
