@@ -3,6 +3,12 @@ import http from 'http'
 import { fileURLToPath } from 'url'
 import path from 'path'
 
+// Ensure no accidental browser globals exist in Node runtime (some tools set them)
+delete globalThis.window
+delete globalThis.document
+delete globalThis.history
+delete globalThis.location
+
 // Import the built server handler (produced by `vite build`)
 const serverPath = path.join(process.cwd(), 'dist', 'server', 'server.js')
 const { default: handler } = await import(serverPath)
