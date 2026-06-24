@@ -1,14 +1,10 @@
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+// vite.config.ts
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  base: "/masmoudi-style-studio/",
-
-  tanstackStart: {
-    server: { entry: "server" },
-    clientEntry: "src/entry-client.tsx",
-  },
-
-  vite: {
-    // keep this for other Vite overrides ONLY
-  },
+  base: "/",
+  plugins: [react(), tailwindcss(), tsconfigPaths()],
 });

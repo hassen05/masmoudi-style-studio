@@ -2,7 +2,7 @@ name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -26,8 +26,8 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: "20.19.0"
+          cache: "npm"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -38,30 +38,15 @@ jobs:
       - name: Build
         env:
           REPO_NAME: "${{ github.repository }}"
-          # This disables the broken local package.json postbuild script in the runner
-          NPM_CONFIG_IGNORE_SCRIPTS: "false" 
         run: |
           REPO=${REPO_NAME#*/}
           echo "Building with base=/$REPO/"
-          # We add --ignore-scripts here just in case to safely bypass postbuild
-          npm run build --ignore-scripts -- --base=/$REPO/
-
-      - name: SPA fallback (client)
-        run: |
-          # Ensure SPA fallback files exist. Use Node script which is cross-platform
-          # and can generate index.html/404.html from built assets when necessary.
-          if command -v node >/dev/null 2>&1; then
-            node ./scripts/postbuild.js
-            echo "SPA fallback ensured by postbuild script."
-          else
-            echo "Error: node not found in runner!" >&2
-            exit 1
-          fi
+          npm run build -- --base=/$REPO/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/client'
+          path: "./dist"
 
       - name: Deploy to GitHub Pages
         id: deployment
